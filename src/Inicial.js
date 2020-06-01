@@ -5,6 +5,7 @@ import GlobalTheme from "./globals";
 import App from './App.js';
 import './App.css';
 import 'materialize-css/dist/css/materialize.min.css'
+import Header from './Header.js';
 
 function Inicial() {
   const [theme, setTheme] = useState("default");
@@ -43,12 +44,8 @@ function Inicial() {
     <ThemeProvider theme={selectTheme(theme)}>
       <Fragment>
         <GlobalTheme />
+        <Header toggleThemeDefault={toggleThemeDefault} toggleThemeLight={toggleThemeLight} toggleThemeDark={toggleThemeDark}></Header>
         <App></App>
-        <div style={{textAlign:"center"}}>
-          <button className="margin" onClick={toggleThemeDefault}>THEME DEFAULT</button>
-          <button className="margin" onClick={toggleThemeLight}>THEME LIGHT</button>
-          <button className="margin" onClick={toggleThemeDark}>THEME DARK</button>
-        </div>
       </Fragment>
     </ThemeProvider>
   );

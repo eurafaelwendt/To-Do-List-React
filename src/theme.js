@@ -2,7 +2,7 @@ export const defaultTheme = {
   body: "#fff",
   text: "black",
   nav: "#FF6C00",
-  button: "#FD8933",
+  button: "#FF6C00",
   input: "black"
 };
 

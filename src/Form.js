@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import FormValiadator from './FormValidator';
-// import App from './App.js';
 
 class Form extends Component {
 
@@ -24,9 +23,13 @@ class Form extends Component {
     listenerInput = event => {
         const { name, value } = event.target;
 
-        this.setState({
-            [name]: value
-        });
+        if (event.key !== 'Enter'){
+            this.setState({
+                [name]: value
+            });
+        }else{
+            this.submitForm();
+        }
 
         clearImmediate();
     }
@@ -64,6 +67,7 @@ class Form extends Component {
                     name="nome"
                     value={nome}
                     onChange={this.listenerInput}
+                    onKeyPress={this.listenerInput}
                     placeholder="Enter a task..."
                     autoComplete="off"
                 />

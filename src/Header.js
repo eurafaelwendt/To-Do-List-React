@@ -1,11 +1,16 @@
 import React from 'react';
 import './App.css';
 
-const Header = () => {
+const Header = (props) => {
     return (
-        <nav style={{textAlign:"center"}}>
+        <nav style={{ textAlign: "left" }}>
             <div>
                 <a href="/" className="size">To Do List</a>
+                <ul id="nav-mobile" className="right hide-on-med-and-down">
+                    <li><button className="margin" onClick={props.toggleThemeDefault}>THEME DEFAULT</button></li>
+                    <li><button className="margin" onClick={props.toggleThemeLight}>THEME LIGHT</button></li>
+                    <li><button className="margin" onClick={props.toggleThemeDark}>THEME DARK</button></li>
+                </ul>
             </div>
         </nav>
     );

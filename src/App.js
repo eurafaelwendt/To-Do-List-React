@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from 'react';
-import Header from './Header';
 import './App.css';
 import Form from './Form';
 import TaskTable from './TaskTable';
@@ -191,7 +190,7 @@ class App extends Component {
   csvTask = async () => {
     const fileName = "Tasks List";
     const json = JSON.stringify(this.state.tasks);
-    const blob = new Blob([json],{type:'application/json'});
+    const blob = new Blob([json], { type: 'application/json' });
     const href = await URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = href;
@@ -220,8 +219,7 @@ class App extends Component {
   render() {
     return (
       <Fragment>
-        <Header changeTheme={this.props.changeTheme}></Header>
-        <input type="file" name="file" onChange={this.uploadTask}/>
+        <input style={{color:"grey"}} type="file" onChange={this.uploadTask}></input>
         <div className="container">
           <Form listenerSubmit={this.listenerSubmit}
             setFilterText={this.setFilterText}
