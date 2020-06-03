@@ -19,6 +19,10 @@ export default createGlobalStyle`
     color: ${({ theme }) => theme.input};
   }
 
+  label{
+    background: ${({ theme }) => theme.label};
+  }
+
   a{
     text-decoration: none;
     color: white;

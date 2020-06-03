@@ -219,7 +219,8 @@ class App extends Component {
   render() {
     return (
       <Fragment>
-        <input style={{color:"grey"}} type="file" onChange={this.uploadTask}></input>
+        <br></br><label itemScope="U+021E9" className="label-upload" for="upload">UPLOAD TASKS &#10581;</label>
+        <input id="upload" className="upload" type="file" onChange={this.uploadTask}></input>
         <div className="container">
           <Form listenerSubmit={this.listenerSubmit}
             setFilterText={this.setFilterText}
